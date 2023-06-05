@@ -89,3 +89,9 @@ Complete this source code to print `object-oriented programming with Python`, fo
 - You are not allowed to create new variables
 - You are not allowed to use string literals
 - Filename: `8-concat_edges.py`
+
+### 9.Easter egg
+
+Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
+- Your script should be maximum 98 characters long (please check with `wc -m 9-easter_egg.py`)
+- Filename: `9-easter_egg.py`
