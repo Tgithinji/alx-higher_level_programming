@@ -32,3 +32,16 @@ Complete this source code in order to print the integer stored in the variable `
 - Your code must be 3 lines long
 - You have to use f-strings [tips](https://realpython.com/python-f-strings/)
 - File: `3-print_number.py`
+
+### 3.Print Float
+
+Complete the source code in order to print the float stored in the variable `number` with a precision of 2 digits.
+
+- You can find the source code here
+- The output of the program should be:
+	- Float:, followed by the float with only 2 digits
+	- followed by a new line
+- You are not allowed to cast `number` to string
+- You have to use f-strings
+- File: `4-print_float.py`
+
