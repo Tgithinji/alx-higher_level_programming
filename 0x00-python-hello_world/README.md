@@ -8,3 +8,10 @@ Write a Shell script that runs a Python script.
 
 The Python file name will be saved in the environment variable `$PYFILE`
 - File: `0-run`
+
+### 1. Run inline
+
+Write a Shell script that runs Python code.
+The Python code will be saved in the environment variable `$PYCODE`
+- File: `1-run_inline`
+
