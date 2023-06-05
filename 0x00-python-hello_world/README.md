@@ -57,3 +57,12 @@ Complete this [source code](https://github.com/alx-tools/0x00.py/blob/master/5-p
 - You are not allowed to use any loops or conditional statement
 - Your program should be maximum 5 lines long
 - File: `5-print_string.py`
+
+### 6. Play with strings
+
+Complete this [source code](https://github.com/alx-tools/0x00.py/blob/master/6-concat.py) to print `Welcome to Holberton School!`
+- You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/6-concat.py)
+- You are not allowed to use any loops or conditional statements.
+- You have to use the variables str1 and str2 in your new line of code
+- Your program should be exactly 5 lines long
+- Filename: `6-concat.py`
