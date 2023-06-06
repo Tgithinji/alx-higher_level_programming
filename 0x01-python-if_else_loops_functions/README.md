@@ -15,3 +15,8 @@ Print the last digit of the number stored in the variable number
 ### 2.I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
 Write a program that prints the ASCII alphabet, in lowercase, not followed by a new line.
 - Filename: `2-print_alphabet,py`
+
+### 3.When I was having that alphabet soup, I never thought that it would pay off
+Write a program that prints the ASCII alphabet, in lowercase, not followed by a new line.
+Print all the letters except q and e
+- filename: `3-print_alphabt.py`
