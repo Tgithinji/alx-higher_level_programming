@@ -65,3 +65,7 @@ Write a function that prints a number 1 t0 100 seperated by a space
 - For multiples of three print `Fizz` instead of the number and for multiples of five print `Buzz`.
 - For numbers which are multiples of both three and five print `FizzBuzz`.
 - Filename: `12-fizzbuzz.py`
+
+### 14. Smile in the mirror
+Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+- Filename: `100-print_tebahpla.py`
