@@ -59,3 +59,9 @@ Write a function that adds two integers and returns the sum
 ### 11 a ^ b
 Write a function that computes a to the power of b and returns the value
 - Filename: `11-pow.py`
+
+### 12, Fizz buzz
+Write a function that prints a number 1 t0 100 seperated by a space
+- For multiples of three print `Fizz` instead of the number and for multiples of five print `Buzz`.
+- For numbers which are multiples of both three and five print `FizzBuzz`.
+- Filename: `12-fizzbuzz.py`
