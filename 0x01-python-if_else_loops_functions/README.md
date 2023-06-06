@@ -24,3 +24,9 @@ Print all the letters except q and e
 ### 4.Hexadecimal printing
 Write a program that prints all numbers from 0 to 98 in decimal and in hexadecimal (as in the following example)
 - filename: `4-print_hexa.py`
+
+### 5. 00..99
+Write a program that prints numbers 0 to 99
+- Must be separated by , and a space
+- Should be printed in ascending order with two digits
+- Filename: `5-print_comb2.py`
