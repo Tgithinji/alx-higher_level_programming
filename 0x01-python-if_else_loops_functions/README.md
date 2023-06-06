@@ -39,3 +39,7 @@ Write a program that prints all possible different combinations of two digits.
 - Print only the smallest combination of two digits
 - Numbers should be printed in ascending order, with two digits
 - Filename: `6-print_comb3.py`
+
+### 7. islower
+Write a function that checks for lowercase
+- Filename: `7-islower.py`
