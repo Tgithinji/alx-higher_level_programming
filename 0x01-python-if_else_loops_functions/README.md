@@ -53,4 +53,9 @@ Write a function that prints the last digit of a number
 - filename: `9-print_last_digit.py`
 
 ### 10. a+ b
-Write a function that adds two integers and returns the sum- Filename: `10-add.py`
+Write a function that adds two integers and returns the sum
+- Filename: `10-add.py`
+
+### 11 a ^ b
+Write a function that computes a to the power of b and returns the value
+- Filename: `11-pow.py`
