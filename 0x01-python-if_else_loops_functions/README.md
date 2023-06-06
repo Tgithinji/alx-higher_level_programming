@@ -47,3 +47,7 @@ Write a function that checks for lowercase
 ### 8. To uppercase
 Write a function that prints a string in uppercase followed by a new line
 - Filename: `8-uppercase.py`
+
+### 9. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important
+Write a function that prints the last digit of a number
+- filename: `9-print_last_digit.py`
