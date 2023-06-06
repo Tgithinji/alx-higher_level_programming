@@ -43,3 +43,7 @@ Write a program that prints all possible different combinations of two digits.
 ### 7. islower
 Write a function that checks for lowercase
 - Filename: `7-islower.py`
+
+### 8. To uppercase
+Write a function that prints a string in uppercase followed by a new line
+- Filename: `8-uppercase.py`
