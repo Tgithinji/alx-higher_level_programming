@@ -69,3 +69,7 @@ Write a function that prints a number 1 t0 100 seperated by a space
 ### 14. Smile in the mirror
 Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
 - Filename: `100-print_tebahpla.py`
+
+### 15. Remove at position
+Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
+- Filename: `101-remove_char_at.py`
