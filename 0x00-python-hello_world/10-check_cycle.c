@@ -10,26 +10,25 @@ int check_cycle(listint_t *list)
 {
 	/* create a temp variable to holed current list */
 	listint_t *temp;
-
-	temp = malloc(sizeof(listint_t));
-	if (temp == NULL)
-		return (0);
+	listint_t *temp2;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
 
-	temp = list->next;
+	temp = list;
+	temp2 = list->next;
 	/* loop throught the list upto the end or we encounter a cycle */
-	while (temp)
+	while (temp && temp->next)
 	{
-		/* if the next struct points to the first node it has a cycle */
-		if (temp->next == list)
+		/* if temp2 catches up with temp a cycle is detected */
+		if (temp2 == temp)
 			return (1);
 
 		temp = temp->next;
+		/* temp2 jumps two nodes at atime while temp jumps one */
+		temp2 = temp2->next->next;
 	}
 
 	/* this means no cycle was found */
-	free(temp);
 	return (0);
 }
