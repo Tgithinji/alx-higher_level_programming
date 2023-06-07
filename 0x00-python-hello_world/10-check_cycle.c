@@ -16,16 +16,15 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	temp = list;
-	temp2 = list->next;
+	temp2 = list;
 	/* loop throught the list upto the end or we encounter a cycle */
 	while (temp && temp->next)
 	{
+		if (temp2 == temp)
+			return (1);
 		temp = temp->next;
 		/* temp2 jumps two nodes at atime while temp jumps one */
 		temp2 = temp2->next->next;
-
-		if (temp2 == temp)
-			return (1);
 	}
 
 	/* this means no cycle was found */
