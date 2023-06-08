@@ -30,3 +30,6 @@ Write a program that prints #pythoniscool, followed by a new line, in the standa
 - You are not allowed to use print or eval or open or import sys
 - Filename: `101-easy_print.py`
 
+## Task 9
+Write a program that prints the alphabet in uppercase, followed by a new line.
+- Filename: `103-fast_alphabet.py`
