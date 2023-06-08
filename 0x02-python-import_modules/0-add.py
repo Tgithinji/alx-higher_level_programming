@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from add_0 import add
 
+
 def simple_func():
     """Function that adds two numbers"""
     a = 1
