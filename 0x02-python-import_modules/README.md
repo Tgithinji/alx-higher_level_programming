@@ -19,3 +19,8 @@ Write a program that prints the result of the addition of all arguments
 ## Task 5
 Write a program that imports the variable a from the file `variable_load_5.py` and prints its value.
 - Filename: `5-variable_load.py`
+
+## Task 6
+Write a program that imports all functions from the file `calculator_1.py` and handles basic operations.
+- Filename: `100-my_calculator.py`
+
