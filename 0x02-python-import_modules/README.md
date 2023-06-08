@@ -11,3 +11,7 @@ Write a program that imports functions from the file `calculator_1.py`, does som
 ## Task 2
 Write a program that prints the number of and the list of its arguments
 - Filename: `2-args.py`
+
+## Task 3
+Write a program that prints the result of the addition of all arguments
+- Filename: `3-infinite_add.py`
