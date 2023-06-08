@@ -15,7 +15,7 @@ def calculate():
         print("{} {} {} = {}".format(a, op, b, add(a, b)))
     elif op == '-':
         print("{} {} {} = {}".format(a, op, b, sub(a, b)))
-    elif op == '*':
+    elif op == 'x':
         print("{} {} {} = {}".format(a, op, b, mul(a, b)))
     elif op == '/':
         print("{} {} {} = {}".format(a, op, b, div(a, b)))
