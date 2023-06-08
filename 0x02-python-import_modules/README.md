@@ -15,3 +15,7 @@ Write a program that prints the number of and the list of its arguments
 ## Task 3
 Write a program that prints the result of the addition of all arguments
 - Filename: `3-infinite_add.py`
+
+## Task 5
+Write a program that imports the variable a from the file `variable_load_5.py` and prints its value.
+- Filename: `5-variable_load.py`
