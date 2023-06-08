@@ -10,6 +10,6 @@ def add_args():
         sum += int(sys.argv[i])
     print(sum)
 
-	
+
 if __name__ == "__main__":
-   add_args()
+    add_args()
