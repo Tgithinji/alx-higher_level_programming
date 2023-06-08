@@ -8,4 +8,3 @@ def var_():
 
 if __name__ == "__main__":
     var_()
-
