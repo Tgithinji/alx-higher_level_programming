@@ -6,4 +6,8 @@ Write a function that prints all integers of a list.
 
 ## Task 1
 Write a function that retrieves an element from a list like in C.
-- Filename: [`1-element_at.py`]
+- Filename: [`1-element_at.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/1-element_at.py)
+
+## Task 2
+Write a function that replaces an element of a list at a specific position
+- Filename: [`2-replace_in_list.py`]()
