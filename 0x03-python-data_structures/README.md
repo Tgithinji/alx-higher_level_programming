@@ -10,4 +10,4 @@ Write a function that retrieves an element from a list like in C.
 
 ## Task 2
 Write a function that replaces an element of a list at a specific position
-- Filename: [`2-replace_in_list.py`]()
+- Filename: [`2-replace_in_list.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/2-replace_in_list.py)
