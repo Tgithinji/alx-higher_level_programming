@@ -22,4 +22,8 @@ Write a function that replaces an element in a list at a specific position witho
 
 ## Task 5
 Write a function that removes all characters c and C from a string.
-- Filename: [`5-no_c.py`]()
+- Filename: [`5-no_c.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/5-no_c.py)
+
+## Task 6
+Write a function that prints a matrix of integers.
+- Filename: [`6-print_matrix_integer.py`]()
