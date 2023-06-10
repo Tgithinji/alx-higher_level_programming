@@ -2,4 +2,8 @@
 
 ## Task 0
 Write a function that prints all integers of a list.
-- Filename: ``0-print_list_integer
+- Filename: [`0-print_list_integer`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/0-print_list_integer.py)
+
+## Task 1
+Write a function that retrieves an element from a list like in C.
+- Filename: [`1-element_at.py`]
