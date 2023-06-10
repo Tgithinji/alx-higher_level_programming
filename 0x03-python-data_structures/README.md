@@ -14,4 +14,8 @@ Write a function that replaces an element of a list at a specific position
 
 ## Task 3
 Write a function that prints all integers of a list, in reverse order.
-- Filename: [`3-print_reversed_list_integer.py`]()
+- Filename: [`3-print_reversed_list_integer.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/3-print_reversed_list_integer.py)
+
+## Task 4
+Write a function that replaces an element in a list at a specific position without modifying the original list.
+- Filename [`4-new_in_list.py`]()
