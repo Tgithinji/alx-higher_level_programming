@@ -6,4 +6,3 @@ def new_in_list(my_list, idx, element):
         return list_cpy
     list_cpy[idx] = element
     return list_cpy
-        
