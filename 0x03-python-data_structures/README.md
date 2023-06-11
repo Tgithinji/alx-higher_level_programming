@@ -42,4 +42,8 @@ Write a function that finds the biggest integer of a list.
 
 ## Task 10
 Write a function that finds all multiples of 2 in a list.
-- Filename: [`10-divisible_by_2.py`]()
+- Filename: [`10-divisible_by_2.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/10-divisible_by_2.py)
+
+## Task 11
+Write a function that deletes the item at a specific position in a list.
+- Filename: [`11-delete_at.py`]()
