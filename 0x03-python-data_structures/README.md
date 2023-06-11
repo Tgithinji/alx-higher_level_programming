@@ -46,4 +46,8 @@ Write a function that finds all multiples of 2 in a list.
 
 ## Task 11
 Write a function that deletes the item at a specific position in a list.
-- Filename: [`11-delete_at.py`]()
+- Filename: [`11-delete_at.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/11-delete_at.py)
+
+## Task 12
+Complete the source code in order to switch value of a and b
+- Filename: [`12-switch.py`]()
