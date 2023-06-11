@@ -31,3 +31,7 @@ Write a function that prints a matrix of integers.
 ## Task 7
 Write a function that adds 2 tuples.
 - Filename: [`7-add_tuple.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/7-add_tuple.py)
+
+## Task 8
+Write a function that returns a tuple with the length of a string and its first character.
+- Filename: [`8-multiple_returns.py`]()
