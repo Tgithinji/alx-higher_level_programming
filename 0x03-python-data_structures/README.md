@@ -26,4 +26,8 @@ Write a function that removes all characters c and C from a string.
 
 ## Task 6
 Write a function that prints a matrix of integers.
-- Filename: [`6-print_matrix_integer.py`]()
+- Filename: [`6-print_matrix_integer.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/6-print_matrix_integer.py)
+
+## Task 7
+Write a function that adds 2 tuples.
+- Filename: [`7-add_tuple.py`]()
