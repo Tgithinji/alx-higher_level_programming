@@ -34,4 +34,8 @@ Write a function that adds 2 tuples.
 
 ## Task 8
 Write a function that returns a tuple with the length of a string and its first character.
-- Filename: [`8-multiple_returns.py`]()
+- Filename: [`8-multiple_returns.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/8-multiple_returns.py)
+
+## Task 9
+Write a function that finds the biggest integer of a list.
+- Filename: [`9-max_integer.py`]()
