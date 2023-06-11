@@ -38,4 +38,8 @@ Write a function that returns a tuple with the length of a string and its first 
 
 ## Task 9
 Write a function that finds the biggest integer of a list.
-- Filename: [`9-max_integer.py`]()
+- Filename: [`9-max_integer.py`](https://github.com/Tgithinji/alx-higher_level_programming/blob/main/0x03-python-data_structures/9-max_integer.py)
+
+## Task 10
+Write a function that finds all multiples of 2 in a list.
+- Filename: [`10-divisible_by_2.py`]()
