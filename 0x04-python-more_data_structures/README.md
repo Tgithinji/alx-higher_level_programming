@@ -29,3 +29,6 @@ Write a function that deletes a key in a dictionary.
 ## Task 9
 Write a function that returns a new dictionary with all values multiplied by 2
 - Filename: `9-multiply_by_2.py`
+## Task 10
+Write a function that returns a key with the biggest integer value.
+- Filename: `10-best_score.py`
