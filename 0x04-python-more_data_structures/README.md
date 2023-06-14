@@ -23,4 +23,6 @@ Write a function that prints a dictionary by ordered keys.
 ## Task 7
 Write a function that replaces or adds key/value in a dictionary.
 - Filename: `7-update_dictionary.py`
-
+## Task 8
+Write a function that deletes a key in a dictionary.
+- Filename: `8-simple_delete.py`
