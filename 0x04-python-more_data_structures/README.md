@@ -8,3 +8,6 @@ Write a function that replaces all occurrences of an element by another in a new
 ## Task 2
 Write a function that adds all unique integers in a list (only once for each integer).
 - Filename: `2-uniq_add.py`
+## Task 3
+Write a function that returns a set of common elements in two sets.
+- Filename: `3-common_elements.py`
