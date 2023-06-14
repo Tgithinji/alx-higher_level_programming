@@ -26,3 +26,6 @@ Write a function that replaces or adds key/value in a dictionary.
 ## Task 8
 Write a function that deletes a key in a dictionary.
 - Filename: `8-simple_delete.py`
+## Task 9
+Write a function that returns a new dictionary with all values multiplied by 2
+- Filename: `9-multiply_by_2.py`
