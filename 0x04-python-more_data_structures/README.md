@@ -39,5 +39,12 @@ Write a function that returns a list with all values multiplied by a number with
 Create a function that converts a Roman numeral to an integer.
 - Filename: `12-roman_to_int.py`
 ## Task 13
+Write a function that returns the weighted average of all integers tuple
+- Filename: `100-weight_average.py`
+## Task 14
 Write a function that computes the square value of all integers of a matrix using map
 - Filename: `101-square_matrix_map.py`
+## Task 15
+Write a function that deletes keys with a specific value in a dictionary.
+- Filename: `102-complex_delete.py`
+
