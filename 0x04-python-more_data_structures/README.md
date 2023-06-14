@@ -17,3 +17,6 @@ Write a function that returns a set of all elements present in only one set.
 ## Task 5
 Write a function that returns the number of keys in a dictionary.
 - Filename: `5-number_keys.py`
+## Task 6
+Write a function that prints a dictionary by ordered keys.
+- Filename: `6-print_sorted_dictionary.py`
