@@ -20,3 +20,7 @@ Write a function that returns the number of keys in a dictionary.
 ## Task 6
 Write a function that prints a dictionary by ordered keys.
 - Filename: `6-print_sorted_dictionary.py`
+## Task 7
+Write a function that replaces or adds key/value in a dictionary.
+- Filename: `7-update_dictionary.py`
+
