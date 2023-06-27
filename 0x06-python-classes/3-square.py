@@ -4,7 +4,7 @@
 
 
 class Square:
-    """a class square with a 
+    """a class square with a
     private instance of size and
     a public instance method that returns area"""
     def __init__(self, size=0):
