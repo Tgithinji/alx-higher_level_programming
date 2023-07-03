@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+
+""" A class that defines a square"""
+
+
+class Square:
+    """class defining a square"""
+    def __init__(self, size=0):
+        """Initialize data"""
+        self.__size = size
+
+    @property
+    def size(self):
+        """retrieve size"""
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """set size"""
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = value
+
+    def area(self):
+        """calculate sqare area"""
+        return self.__size * self.__size
+
+    def my_print(self):
+        """
+        print a square with the characyter #
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                for x in range(self.__size):
+                    print("#", end="")
+                print()
