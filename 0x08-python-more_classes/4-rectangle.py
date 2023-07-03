@@ -83,4 +83,5 @@ class Rectangle:
         """
         Returns a string reprecentation
         """
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+        s = "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+        return s
