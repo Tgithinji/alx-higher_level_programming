@@ -1,0 +1,5 @@
+#!/bin/bash
+pyfile=$PYFILE
+output_file="${pyfile}c"
+echo "Compiling main.py..."
+python3 -m py_compile "$pyfile"
