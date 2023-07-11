@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This script adds all arguments to a Python list
+"""
 import sys
 import os
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
