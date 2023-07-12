@@ -24,7 +24,7 @@ class Student():
         if attrs is not None and isinstance(attrs, list):
             for item in attrs:
                 if hasattr(self, item):
-                   dct[item] = getattr(self, item)
+                    dct[item] = getattr(self, item)
             return dct
         else:
             return self.__dict__
