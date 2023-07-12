@@ -14,7 +14,7 @@ def pascal_triangle(n):
     if n <= 0:
         return lst
     for i in range(1, n+1):
-        row=[]
+        row = []
         bin_c = 1
         for x in range(1, i+1):
             row.append(bin_c)
