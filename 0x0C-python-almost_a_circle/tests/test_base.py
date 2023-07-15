@@ -86,5 +86,6 @@ class BaseTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             b = Base(12, 10)
 
+
 if __name__ == '__main__':
     unittest.main()
