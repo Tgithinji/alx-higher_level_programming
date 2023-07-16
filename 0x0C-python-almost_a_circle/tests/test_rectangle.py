@@ -201,6 +201,27 @@ class TestaAreaDisplay(unittest.TestCase):
             r = Rectangle(3, 2)
             r.__str__(1)
 
+    def test_display_with_x(self):
+        with patch('sys.stdout', new=StringIO()) as f:
+            r = Rectangle(2, 2, 2)
+            output = "  ##\n  ##\n"
+            r.display()
+            self.assertEqual(f.getvalue(), output)
+
+    def test_display_with_y(self):
+        with patch('sys.stdout', new=StringIO()) as f:
+            r = Rectangle(2, 2, 0, 2)
+            output = "\n\n##\n##\n"
+            r.display()
+            self.assertEqual(f.getvalue(), output)
+
+    def test_display_with_both_xy(self):
+        with patch('sys.stdout', new=StringIO()) as f:
+            r = Rectangle(3, 2, 2, 2)
+            output = "\n\n  ###\n  ###\n"
+            r.display()
+            self.assertEqual(f.getvalue(), output)
+
 
 if __name__ == "__main__":
     unittest.main()
