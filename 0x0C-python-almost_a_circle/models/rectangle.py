@@ -124,20 +124,25 @@ class Rectangle(Base):
                 rect += '\n'
         print(rect)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         assigns an argument to each attribute
         """
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.__height = args[2]
-        if len(args) > 3:
-            self.__x = args[3]
-        if len(args) > 4:
-            self.__y = args[4]
+        if len(args) != 0:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.__width = args[1]
+            if len(args) > 2:
+                self.__height = args[2]
+            if len(args) > 3:
+                self.__x = args[3]
+            if len(args) > 4:
+                self.__y = args[4]
+        elif len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     def __str__(self):
         """
