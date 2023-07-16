@@ -222,6 +222,42 @@ class TestaAreaDisplay(unittest.TestCase):
             r.display()
             self.assertEqual(f.getvalue(), output)
 
+class TestUpdate(unittest.TestCase):
+    def test_with_no_args(self):
+        r = Rectangle(5, 10, 2, 3, 40)
+        output = "[Rectangle] (40) 2/3 - 5/10"
+        self.assertEqual(output, r.__str__())
+
+    def test_update_id(self):
+        r = Rectangle(5, 10, 2, 3, 40)
+        r.update(89)
+        output = "[Rectangle] (89) 2/3 - 5/10"
+        self.assertEqual(output, r.__str__())
+
+    def test_id_width(self):
+        r = Rectangle(5, 10, 2, 3, 40)
+        r.update(89, 15)
+        output = "[Rectangle] (89) 2/3 - 15/10"
+        self.assertEqual(output, r.__str__())
+
+    def test_id_width_height(self):
+        r = Rectangle(5, 10, 2, 3, 40)
+        r.update(89, 15, 20)
+        output = "[Rectangle] (89) 2/3 - 15/20"
+        self.assertEqual(output, r.__str__())
+
+    def test_with_all_args(self):
+        r = Rectangle(5, 10, 2, 3, 40)
+        r.update(89, 15, 20, 5, 6)
+        output = "[Rectangle] (89) 5/6 - 15/20"
+        self.assertEqual(output, r.__str__())
+
+    def test_excess_args(self):
+        r = Rectangle(5, 10, 2, 3, 40)
+        r.update(89, 15, 20, 5, 6, 80, 90, 100)
+        output = "[Rectangle] (89) 5/6 - 15/20"
+        self.assertEqual(output, r.__str__())
+
 
 if __name__ == "__main__":
     unittest.main()
