@@ -3,6 +3,8 @@
 This is the module to test_rectangle
 """
 import unittest
+from io import StringIO
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -141,7 +143,7 @@ class TestSetterGetter(unittest.TestCase):
             Rectangle(1, 5, 3, -2)
 
 
-class Testarea(unittest.TestCase):
+class TestaAreaDisplay(unittest.TestCase):
     def test_area(self):
         r = Rectangle(3, 2)
         r2 = Rectangle(8, 7, 0, 0, 12)
@@ -162,6 +164,17 @@ class Testarea(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(3, 2)
             r.area(1)
+
+    def test_display_to_stdout(self):
+        with patch('sys.stdout', new = StringIO()) as f:
+            r = Rectangle(3, 2)
+            r.display()
+            self.assertEqual(f.getvalue(), "###\n###\n")
+
+    def test_display_with_args(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(3, 2)
+            r.display(1)
 
 
 if __name__ == "__main__":
