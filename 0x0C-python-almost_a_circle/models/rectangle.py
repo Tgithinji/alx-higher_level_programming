@@ -2,7 +2,7 @@
 """
 This is the Rectangle module
 """
-from  models.base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
