@@ -166,7 +166,7 @@ class TestaAreaDisplay(unittest.TestCase):
             r.area(1)
 
     def test_display_to_stdout(self):
-        with patch('sys.stdout', new = StringIO()) as f:
+        with patch('sys.stdout', new=StringIO()) as f:
             r = Rectangle(3, 2)
             r.display()
             self.assertEqual(f.getvalue(), "###\n###\n")
@@ -175,6 +175,31 @@ class TestaAreaDisplay(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(3, 2)
             r.display(1)
+
+    def test_str_representation(self):
+        r = Rectangle(3, 2)
+        expected_out = "[Rectangle] ({}) 0/0 - 3/2".format(r.id)
+        self.assertEqual(expected_out, r.__str__())
+
+    def test_str_with_x(self):
+        r = Rectangle(3, 2, 5)
+        expected_out = "[Rectangle] ({}) 5/0 - 3/2".format(r.id)
+        self.assertEqual(expected_out, r.__str__())
+
+    def test_str_with_xy(self):
+        r = Rectangle(3, 2, 5, 6)
+        expected_out = "[Rectangle] ({}) 5/6 - 3/2".format(r.id)
+        self.assertEqual(expected_out, r.__str__())
+
+    def test_str_with_id(self):
+        r = Rectangle(2, 5, 3, 2, 12)
+        expected_out = "[Rectangle] (12) 3/2 - 2/5"
+        self.assertEqual(expected_out, r.__str__())
+
+    def test_str_with_args(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(3, 2)
+            r.__str__(1)
 
 
 if __name__ == "__main__":
