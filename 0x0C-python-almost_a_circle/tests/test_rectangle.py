@@ -258,6 +258,57 @@ class TestUpdate(unittest.TestCase):
         output = "[Rectangle] (89) 5/6 - 15/20"
         self.assertEqual(output, r.__str__())
 
+    def test_with_kwargs_with_one_kwarg(self):
+        r = Rectangle(10, 10, 10, 10)
+        r.update(id=89)
+        output = "[Rectangle] (89) 10/10 - 10/10"
+        self.assertEqual(output, r.__str__())
+        r.update(x=1)
+        output = "[Rectangle] (89) 1/10 - 10/10"
+        self.assertEqual(output, r.__str__())
+        r.update(y=1)
+        output = "[Rectangle] (89) 1/1 - 10/10"
+        self.assertEqual(output, r.__str__())
+        r.update(width=1)
+        output = "[Rectangle] (89) 1/1 - 1/10"
+        self.assertEqual(output, r.__str__())
+        r.update(height=1)
+        output = "[Rectangle] (89) 1/1 - 1/1"
+        self.assertEqual(output, r.__str__())
+
+    def test_kwargs_with_partial_kwargs(self):
+        r = Rectangle(10, 10, 10, 10)
+        r.update(width=1, height=1, id=89)
+        output = "[Rectangle] (89) 10/10 - 1/1"
+        self.assertEqual(output, r.__str__())
+        r.update(x=1, y=1)
+        output = "[Rectangle] (89) 1/1 - 1/1"
+        self.assertEqual(output, r.__str__())
+
+    def test_with_all_kwargs(self):
+        r = Rectangle(10, 10, 10, 10)
+        r.update(width=1, height=1, x=1, y=1, id=89)
+        output = "[Rectangle] (89) 1/1 - 1/1"
+        self.assertEqual(output, r.__str__())
+
+    def test_with_excess_kwargs(self):
+        r = Rectangle(10, 10, 10, 10)
+        r.update(width=1, height=1, x=1, y=1, id=89, z=1)
+        output = "[Rectangle] (89) 1/1 - 1/1"
+        self.assertEqual(output, r.__str__())
+
+    def test_kwargs_and_ags(self):
+        r = Rectangle(10, 10, 10, 10)
+        r.update(89, id=89, width=1)
+        output = "[Rectangle] (89) 10/10 - 10/10"
+        self.assertEqual(output, r.__str__())
+
+    def test_kwargs_with_key_that_dont_exist(self):
+        r = Rectangle(10, 10, 10, 10, 10)
+        r.update(z=1)
+        output = "[Rectangle] (10) 10/10 - 10/10"
+        self.assertEqual(output, r.__str__())
+
 
 if __name__ == "__main__":
     unittest.main()
