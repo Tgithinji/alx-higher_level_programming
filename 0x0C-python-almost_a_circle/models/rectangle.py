@@ -104,9 +104,20 @@ class Rectangle(Base):
         the character #
         """
         rect = ""
+        y_copy = self.__y
+
         for i in range(self.__height):
-            for x in range(self.__width):
+            if y_copy != 0:
+                rect += ('\n' * y_copy)
+                y_copy = 0
+            x_copy = self.__x
+
+            for j in range(self.__width):
+                if x_copy != 0:
+                    rect += (' ' * x_copy)
+                    x_copy = 0
                 rect += '#'
+
             if i == self.__height - 1:
                 break
             else:
