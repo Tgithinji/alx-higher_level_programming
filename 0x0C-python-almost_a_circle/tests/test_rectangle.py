@@ -141,5 +141,28 @@ class TestSetterGetter(unittest.TestCase):
             Rectangle(1, 5, 3, -2)
 
 
+class Testarea(unittest.TestCase):
+    def test_area(self):
+        r = Rectangle(3, 2)
+        r2 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(6, r.area())
+        self.assertEqual(56, r2.area())
+
+    def test_big_number_area(self):
+        r = Rectangle(5555555, 5555555)
+        self.assertEqual(30864191358025, r.area())
+
+    def test_area_with_changed_attributes(self):
+        r = Rectangle(3, 2)
+        r.width = 10
+        r.height = 5
+        self.assertEqual(50, r.area())
+
+    def test_exception_with_extra_args(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(3, 2)
+            r.area(1)
+
+
 if __name__ == "__main__":
     unittest.main()
