@@ -112,3 +112,13 @@ class Rectangle(Base):
             else:
                 rect += '\n'
         print(rect)
+
+    def __str__(self):
+        """
+        Returns a string representation
+        """
+        s1 = "[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/"
+        s2 = str(self.__y) + " - " + str(self.__width) + "/"
+        s3 = str(self.__height)
+        s = s1 + s2 + s3
+        return s
