@@ -136,7 +136,7 @@ class TestSaveToJson(unittest.TestCase):
     def teardown(self):
         list_files = ["Rectangle.json", "Square.json", "Base.json"]
         for file in list_files:
-            if os.exists(file):
+            if os.path.exists(file):
                 os.remove(file)
 
     def test_save_to_file_rectangle(self):
@@ -277,6 +277,43 @@ class TestCreate(unittest.TestCase):
             s1 = Square.create(s_dictionary)
             s2 = Square.create()
             s3 = Square.create(2, **s_dictionary)
+
+
+class TestLoadFromFile(unittest.TestCase):
+    @classmethod
+    def teardown(self):
+        list_files = ["Rectangle.json", "Square.json", "Base.json"]
+        for file in list_files:
+            if os.path.exists(file):
+                os.remove(file)
+
+    def test_load_from_file_rectangle(self):
+        r = Rectangle(10, 4)
+        r1 = Rectangle(23, 34, 10)
+        list_rect_input = [r, r1]
+        Rectangle.save_to_file(list_rect_input)
+        list_rect_output = Rectangle.load_from_file()
+        for i, rect in enumerate(list_rect_output):
+            with self.subTest(rect=rect):
+                self.assertEqual(str(list_rect_input[i]), str(rect))
+                self.assertIsInstance(rect, Rectangle)
+                self.assertIsNot(rect, list_rect_input[i])
+
+    def test_load_from_file_square(self):
+        s = Square(10)
+        s1 = Square(23, 34, 10)
+        list_square_input = [s, s1]
+        Square.save_to_file(list_square_input)
+        list_square_output = Square.load_from_file()
+        for i, square in enumerate(list_square_output):
+            with self.subTest(square=square):
+                self.assertEqual(str(list_square_input[i]), str(square))
+                self.assertIsInstance(square, Square)
+                self.assertIsNot(square, list_square_input[i])
+
+    def test_exeptions(self):
+        with self.assertRaises(TypeError):
+            Square.load_from_file(12)
 
 
 if __name__ == '__main__':
