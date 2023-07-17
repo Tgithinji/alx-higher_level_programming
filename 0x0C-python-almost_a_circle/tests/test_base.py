@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ test_base module """
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -128,6 +129,66 @@ class TestToJsonString(unittest.TestCase):
     def test_with_no_args(self):
         with self.assertRaises(TypeError):
              Base.to_json_string()
+
+class TestSaveToJson(unittest.TestCase):
+    @classmethod
+    def teardown(self):
+        list_files = ["Rectangle.json", "Square.json", "Base.json"]
+        for file in list_files:
+            if os.exists(file):
+                os.remove(file)
+
+    def test_save_to_file_rectangle(self):
+        r = Rectangle(7, 5, 4, 3, 9)
+        Rectangle.save_to_file([r])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 52)
+
+    def test_save_to_file__multiple_rectangle(self):
+        r = Rectangle(7, 5, 4, 3, 9)
+        r2 = Rectangle(2, 3, 4, 2, 5)
+        Rectangle.save_to_file([r, r2])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 104)
+
+    def test_save_to_file_Square(self):
+        s = Square(7, 5, 4, 3)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 38)
+
+    def test_save_to_file_multiple_Square(self):
+        s = Square(7, 5, 4, 3)
+        s2 = Square(10, 5, 4, 3)
+        Square.save_to_file([s, s2])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 77)
+
+    def test_save_to_file_ovewrite(self):
+        s = Square(7, 5, 4, 3)
+        Square.save_to_file([s])
+        s2 = Square(10, 5, 4, 3)
+        Square.save_to_file([s2])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 39)
+
+    def test_save_to_file_None(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_empty(self):
+        Base.save_to_file([])
+        with open("Base.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_no_args(self):
+        with self.assertRaises(TypeError):
+            Square.save_to_file()
+
+    def test_save_to_file_with_many_args(self):
+        with self.assertRaises(TypeError):
+            Square.save_to_file([], [])
 
 
 if __name__ == '__main__':
