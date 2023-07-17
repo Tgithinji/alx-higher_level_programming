@@ -206,5 +206,28 @@ class TestUpdate(unittest.TestCase):
         output = "[Rectangle] (89) 1/1 - 1"
 
 
+class TestSquareToDictionary(unittest.TestCase):
+    """
+    Test the to_dictionary method
+    """
+    def test_to_dict_output(self):
+        s = Square(10, 2, 1, 10)
+        output = {'id': 10, 'x': 2, 'size': 10, 'y': 1}
+        self.assertEqual(output, s.to_dictionary())
+
+    def test_to_dictionary_with_update(self):
+        s = Square(10, 2, 1, 10)
+        s1 = Square(1, 1)
+        s1.update(**s.to_dictionary())
+        self.assertEqual(s.to_dictionary(), s1.to_dictionary())
+        self.assertNotEqual(s, s1)
+
+    def test_with_args(self):
+        with self.assertRaises(TypeError):
+            s = Square(10, 2, 1, 9)
+            s.to_dictionary(1)
+
+
+
 if __name__ == "__main__":
     unittest.main()
