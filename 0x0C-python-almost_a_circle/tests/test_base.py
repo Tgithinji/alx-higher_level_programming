@@ -120,15 +120,15 @@ class TestToJsonString(unittest.TestCase):
         self.assertEqual("[]", Base.to_json_string([]))
 
     def test_with_None(self):
-       self.assertEqual("[]", Base.to_json_string(None))
+        self.assertEqual("[]", Base.to_json_string(None))
 
     def test_with_excess_args(self):
         with self.assertRaises(TypeError):
-             Base.to_json_string([], [])
+            Base.to_json_string([], [])
 
     def test_with_no_args(self):
         with self.assertRaises(TypeError):
-             Base.to_json_string()
+            Base.to_json_string()
 
 
 class TestSaveToJson(unittest.TestCase):
@@ -209,15 +209,15 @@ class TestFromJsonString(unittest.TestCase):
         self.assertEqual([], Base.from_json_string("[]"))
 
     def test_with_None(self):
-       self.assertEqual([], Base.from_json_string(None))
+        self.assertEqual([], Base.from_json_string(None))
 
     def test_with_excess_args(self):
         with self.assertRaises(TypeError):
-             Base.from_json_string([], [])
+            Base.from_json_string([], [])
 
     def test_with_no_args(self):
         with self.assertRaises(TypeError):
-             Base.from_json_string()
+            Base.from_json_string()
 
 
 if __name__ == '__main__':

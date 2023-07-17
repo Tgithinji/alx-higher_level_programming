@@ -60,7 +60,7 @@ class TestSquareAttrValidation(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("12")
             Square(2.3)
-            Square((1,2))
+            Square((1, 2))
             Square([1, 2])
             Square({1, 2})
             Square({"a": 1, "b": 1})
@@ -158,7 +158,8 @@ class TestInheritedMethods(unittest.TestCase):
 
     def test_str_with_args(self):
         with self.assertRaises(TypeError):
-             Square(2).__str__(1)
+            Square(2).__str__(1)
+
 
 class TestUpdate(unittest.TestCase):
     def test_with_no_args(self):
@@ -226,7 +227,6 @@ class TestSquareToDictionary(unittest.TestCase):
         with self.assertRaises(TypeError):
             s = Square(10, 2, 1, 9)
             s.to_dictionary(1)
-
 
 
 if __name__ == "__main__":

@@ -158,6 +158,11 @@ class Rectangle(Base):
         """
         Returns the dictionary representation of a rectangle
         """
-        _dict = {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
+        _dict = {
+            'x': self.__x,
+            'y': self.__y,
+            'id': self.id,
+            'height': self.__height,
+            'width': self.__width
+             }
         return _dict
-        return 

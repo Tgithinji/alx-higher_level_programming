@@ -318,7 +318,7 @@ class TestRectToDict(unittest.TestCase):
     """
     def test_to_dict_output(self):
         r = Rectangle(10, 2, 1, 9, 10)
-        output = {'x': 1, 'y':9, 'id': 10, 'height': 2, 'width': 10}
+        output = {'x': 1, 'y': 9, 'id': 10, 'height': 2, 'width': 10}
         self.assertEqual(output, r.to_dictionary())
 
     def test_to_dictionary_with_update(self):
