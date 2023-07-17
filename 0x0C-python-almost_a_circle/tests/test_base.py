@@ -130,6 +130,7 @@ class TestToJsonString(unittest.TestCase):
         with self.assertRaises(TypeError):
              Base.to_json_string()
 
+
 class TestSaveToJson(unittest.TestCase):
     @classmethod
     def teardown(self):
@@ -189,6 +190,34 @@ class TestSaveToJson(unittest.TestCase):
     def test_save_to_file_with_many_args(self):
         with self.assertRaises(TypeError):
             Square.save_to_file([], [])
+
+
+class TestFromJsonString(unittest.TestCase):
+    def test_from_json_string_rectangle(self):
+        list_input = [{'id': 89, 'width': 10, 'height': 4}]
+        json_list_output = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_output)
+        self.assertIsInstance(list_output, list)
+
+    def test_from_json_string_rectangle(self):
+        list_input = [{'id': 89, 'size': 2}]
+        json_list_output = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_output)
+        self.assertIsInstance(list_output, list)
+
+    def test_with_empty_list(self):
+        self.assertEqual([], Base.from_json_string("[]"))
+
+    def test_with_None(self):
+       self.assertEqual([], Base.from_json_string(None))
+
+    def test_with_excess_args(self):
+        with self.assertRaises(TypeError):
+             Base.from_json_string([], [])
+
+    def test_with_no_args(self):
+        with self.assertRaises(TypeError):
+             Base.from_json_string()
 
 
 if __name__ == '__main__':
