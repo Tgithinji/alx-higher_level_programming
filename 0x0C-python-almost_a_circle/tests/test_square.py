@@ -160,6 +160,51 @@ class TestInheritedMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
              Square(2).__str__(1)
 
+class TestUpdate(unittest.TestCase):
+    def test_with_no_args(self):
+        s = Square(10, 10, 10, 10)
+        r.update()
+        output = "[Square] (10) 10/10 - 10"
+        self.assertEqual(output, s.__str__())
+
+    def test_update_id(self):
+        s = Square(10, 2, 3, 40)
+        s.update(89)
+        output = "[Square] (89) 2/3 - 10"
+        self.assertEqual(output, s.__str__())
+
+    def test_id_size(self):
+        s = Square(10, 2, 3, 40)
+        s.update(89, 15)
+        output = "[Square] (89) 2/3 - 15"
+        self.assertEqual(output, s.__str__())
+
+    def test_with_all_args(self):
+        s = Square(10, 2, 3, 40)
+        s.update(89, 15, 5, 6)
+        output = "[Square] (89) 5/6 - 20"
+        self.assertEqual(output, s.__str__())
+
+    def test_excess_args(self):
+        s = Square(10, 2, 3, 40)
+        s.update(89, 20, 5, 6, 80, 90, 100)
+        output = "[Square] (89) 5/6 - 20"
+        self.assertEqual(output, s.__str__())
+
+    def test_with_kwargs_with_one_kwarg(self):
+        s = Square(10, 10, 10, 10)
+        s.update(id=89)
+        output = "[Square] (89) 10/10 - 10"
+        self.assertEqual(output, s.__str__())
+        s.update(x=1)
+        output = "[Square] (89) 1/10 - 10"
+        self.assertEqual(output, s.__str__())
+        s.update(y=1)
+        output = "[Square] (89) 1/1 - 10"
+        self.assertEqual(output, r.__str__())
+        r.update(size=1)
+        output = "[Rectangle] (89) 1/1 - 1"
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -226,6 +226,7 @@ class TestaAreaDisplay(unittest.TestCase):
 class TestUpdate(unittest.TestCase):
     def test_with_no_args(self):
         r = Rectangle(5, 10, 2, 3, 40)
+        r.update()
         output = "[Rectangle] (40) 2/3 - 5/10"
         self.assertEqual(output, r.__str__())
 
