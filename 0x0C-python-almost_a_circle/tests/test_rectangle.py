@@ -222,6 +222,7 @@ class TestaAreaDisplay(unittest.TestCase):
             r.display()
             self.assertEqual(f.getvalue(), output)
 
+
 class TestUpdate(unittest.TestCase):
     def test_with_no_args(self):
         r = Rectangle(5, 10, 2, 3, 40)
