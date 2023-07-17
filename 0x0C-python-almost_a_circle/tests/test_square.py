@@ -163,7 +163,7 @@ class TestInheritedMethods(unittest.TestCase):
 class TestUpdate(unittest.TestCase):
     def test_with_no_args(self):
         s = Square(10, 10, 10, 10)
-        r.update()
+        s.update()
         output = "[Square] (10) 10/10 - 10"
         self.assertEqual(output, s.__str__())
 
@@ -182,7 +182,7 @@ class TestUpdate(unittest.TestCase):
     def test_with_all_args(self):
         s = Square(10, 2, 3, 40)
         s.update(89, 15, 5, 6)
-        output = "[Square] (89) 5/6 - 20"
+        output = "[Square] (89) 5/6 - 15"
         self.assertEqual(output, s.__str__())
 
     def test_excess_args(self):
@@ -201,8 +201,8 @@ class TestUpdate(unittest.TestCase):
         self.assertEqual(output, s.__str__())
         s.update(y=1)
         output = "[Square] (89) 1/1 - 10"
-        self.assertEqual(output, r.__str__())
-        r.update(size=1)
+        self.assertEqual(output, s.__str__())
+        s.update(size=1)
         output = "[Rectangle] (89) 1/1 - 1"
 
 
