@@ -312,5 +312,27 @@ class TestUpdate(unittest.TestCase):
         self.assertEqual(output, r.__str__())
 
 
+class TestRectToDict(unittest.TestCase):
+    """
+    Test the to_dict method
+    """
+    def test_to_dict_output(self):
+        r = Rectangle(10, 2, 1, 9, 10)
+        output = {'x': 1, 'y':9, 'id': 10, 'height': 2, 'width': 10}
+        self.assertEqual(output, r.to_dictionary())
+
+    def test_to_dictionary_with_update(self):
+        r = Rectangle(10, 2, 1, 9, 10)
+        r1 = Rectangle(1, 1)
+        r1.update(**r.to_dictionary())
+        self.assertEqual(r.to_dictionary(), r1.to_dictionary())
+        self.assertNotEqual(r, r1)
+
+    def test_with_args(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10, 2, 1, 9)
+            r.to_dictionary(1)
+
+
 if __name__ == "__main__":
     unittest.main()
