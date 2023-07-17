@@ -220,5 +220,64 @@ class TestFromJsonString(unittest.TestCase):
             Base.from_json_string()
 
 
+class TestCreate(unittest.TestCase):
+    def test_create_type_rectangle(self):
+        r = Rectangle(3, 5, 1)
+        r_dictionary = r.to_dictionary()
+        r1 = Rectangle.create(**r_dictionary)
+        self.assertIsInstance(r1, Rectangle)
+        self.assertNotIsInstance(r1, Square)
+
+    def test_create_rectangle(self):
+        r = Rectangle(3, 5, 1)
+        r_dictionary = r.to_dictionary()
+        r1 = Rectangle.create(**r_dictionary)
+        self.assertEqual(str(r), str(r1))
+
+    def test_create_rectangle_equal(self):
+        r = Rectangle(3, 5, 1)
+        r_dictionary = r.to_dictionary()
+        r1 = Rectangle.create(**r_dictionary)
+        self.assertNotEqual(r, r1)
+
+    def test_if_creates_the_same_object(self):
+        r = Rectangle(3, 5, 1)
+        r_dictionary = r.to_dictionary()
+        r1 = Rectangle.create(**r_dictionary)
+        self.assertIsNot(str(r), str(r1))
+
+    def test_create_type_square(self):
+        s = Square(3, 2)
+        s_dictionary = s.to_dictionary()
+        s1 = Square.create(**s_dictionary)
+        self.assertIsInstance(s1, Square)
+
+    def test_create_square(self):
+        s = Square(3, 2)
+        s_dictionary = s.to_dictionary()
+        s1 = Square.create(**s_dictionary)
+        self.assertEqual(str(s), str(s1))
+
+    def test_create_square_equal(self):
+        s = Square(3, 2)
+        s_dictionary = s.to_dictionary()
+        s1 = Square.create(**s_dictionary)
+        self.assertNotEqual(s, s1)
+
+    def test_create_square_not_same_type(self):
+        s = Square(3, 2)
+        s_dictionary = s.to_dictionary()
+        s1 = Square.create(**s_dictionary)
+        self.assertIsNot(s, s1)
+
+    def test_create_exception(self):
+        with self.assertRaises(TypeError):
+            s = Square(3)
+            s_dictionary = s.to_dictionary()
+            s1 = Square.create(s_dictionary)
+            s2 = Square.create()
+            s3 = Square.create(2, **s_dictionary)
+
+
 if __name__ == '__main__':
     unittest.main()
