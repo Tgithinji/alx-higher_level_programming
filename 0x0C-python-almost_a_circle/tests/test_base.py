@@ -2,6 +2,8 @@
 """ test_base module """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class BaseTestCase(unittest.TestCase):
@@ -85,6 +87,47 @@ class BaseTestCase(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             b = Base(12, 10)
+
+
+class TestToJsonString(unittest.TestCase):
+    """
+    Test to the to json string method
+    """
+    def test_to_json_string_rectangle(self):
+        r = Rectangle(10, 7, 2, 8)
+        self.assertIsInstance(Base.to_json_string([r.to_dictionary()]), str)
+
+    def test_to_json_with_many_args_rectangle(self):
+        r = Rectangle(1, 2, 5, 2, 12)
+        r1 = Rectangle(1, 2, 5, 2, 12)
+        r2 = Rectangle(1, 2, 5, 2, 12)
+        list_dict = [r.to_dictionary(), r1.to_dictionary(), r2.to_dictionary()]
+        self.assertIsInstance(Base.to_json_string(list_dict), str)
+
+    def test_to_json_string_Square(self):
+        s = Square(10, 7, 2, 8)
+        self.assertIsInstance(Base.to_json_string([s.to_dictionary()]), str)
+
+    def test_to_json_with_many_args_square(self):
+        s = Square(1, 2, 5, 12)
+        s1 = Square(1, 5, 2, 12)
+        s2 = Square(2, 5, 2, 12)
+        list_dict = [s.to_dictionary(), s1.to_dictionary(), s2.to_dictionary()]
+        self.assertIsInstance(Base.to_json_string(list_dict), str)
+
+    def test_with_empty_list(self):
+        self.assertEqual("[]", Base.to_json_string([]))
+
+    def test_with_None(self):
+       self.assertEqual("[]", Base.to_json_string(None))
+
+    def test_with_excess_args(self):
+        with self.assertRaises(TypeError):
+             Base.to_json_string([], [])
+
+    def test_with_no_args(self):
+        with self.assertRaises(TypeError):
+             Base.to_json_string()
 
 
 if __name__ == '__main__':
