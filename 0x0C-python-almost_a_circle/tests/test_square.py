@@ -42,7 +42,9 @@ class TestSquare(unittest.TestCase):
     def test_size(self):
         s = Square(2)
         self.assertEqual(s.width, s.height)
-        self.assertEqual(2, s.width)
+        self.assertEqual(2, s.size)
+        s.size = 20
+        self.assertEqual(20, s.size)
 
     def test_square_with_no_args(self):
         with self.assertRaises(TypeError):
@@ -55,7 +57,7 @@ class TestSquare(unittest.TestCase):
 
 class TestSquareAttrValidation(unittest.TestCase):
     def test_size_exception(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("12")
             Square(2.3)
             Square((1,2))
@@ -65,7 +67,7 @@ class TestSquareAttrValidation(unittest.TestCase):
             Square(None)
             Square(True)
 
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(-1)
             Square(0)
 

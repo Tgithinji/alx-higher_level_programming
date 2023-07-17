@@ -16,6 +16,18 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        sets the value of size
+        """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """
         overloading __str__ method
