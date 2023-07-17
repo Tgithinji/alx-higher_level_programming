@@ -3,6 +3,7 @@
 This is rhe base module
 """
 import json
+import os
 
 
 class Base():
@@ -65,3 +66,15 @@ class Base():
             obj = cls(2)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+        """
+        filename = cls.__name__ + ".json"
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding='utf-8') as f:
+                json_str = f.read()
+        list_dict = cls.from_json_string(json_str)
+        return [cls.create(**obj) for obj in list_dict]
