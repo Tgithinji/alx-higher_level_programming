@@ -69,7 +69,7 @@ class TestSquareAttrValidation(unittest.TestCase):
 
     def test__size_less_than_1(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            Square(0)
+            Square(-1)
 
     def test__size_is_not_0(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
