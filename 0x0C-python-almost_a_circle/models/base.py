@@ -81,3 +81,40 @@ class Base():
             return [cls.create(**obj) for obj in list_dict]
         else:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        serializes in cvs
+        """
+        filename = cls.__name__ + ".csv"
+        if list_objs is None:
+            list_objs = []
+        dict_list = [obj.to_dictionary() for obj in list_objs]
+        if cls.__name__ == "Rectangle":
+            fieldnames = ['id', 'width', 'height', 'x', 'y']
+        else:
+            fieldnames = ['id', 'size', 'x', 'y']
+
+        with open(filename, 'w', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for dictionary in dict_list:
+                writer.writerow(dictionary)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes in csv
+        """
+        filename = cls.__name__ + ".csv"
+        if os.path.exists(filename):
+            list_dict = []
+            with open(filename, 'r', encoding='utf-8') as f:
+                csv_reader = csv.DictReader(f)
+                for row in csv_reader:
+                    dictionary = {key: int(v) for key, v in row.items()}
+                    list_dict.append(dictionary)
+                return [cls.create(**obj) for obj in list_dict]
+        else:
+            return []
