@@ -44,6 +44,14 @@ class testRectangle(unittest.TestCase):
             print(r.__x)
             print(r.__y)
 
+    def test_valueerror(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(0, 2)
+ 
+    def test_height_valueerror(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(1, 0)
+
 
 class TestSetterGetter(unittest.TestCase):
     """
