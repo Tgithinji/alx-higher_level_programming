@@ -5,6 +5,7 @@ This is rhe base module
 import json
 import os
 import csv
+import turtle
 
 
 class Base():
@@ -118,3 +119,42 @@ class Base():
                 return [cls.create(**obj) for obj in list_dict]
         else:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        draws Rectangles and squares using turtle module
+        """
+        drawing = turtle.Turtle()
+        drawing.screen.bgcolor("#EDF7F6")
+        drawing.shape("turtle")
+        drawing.pensize(5)
+        drawing.color("#56351E")
+
+        for r in list_rectangles:
+            drawing.showturtle()
+            drawing.begin_fill()
+            drawing.fillcolor("#c47335")
+            drawing.up()
+            drawing.goto(r.x, r.y)
+            drawing.down()
+            for i in range(2):
+                drawing.forward(r.width)
+                drawing.left(90)
+                drawing.forward(r.height)
+                drawing.left(90)
+            drawing.end_fill()
+            drawing.hideturtle()
+
+        for s in list_squares:
+            drawing.showturtle()
+            drawing.begin_fill()
+            drawing.fillcolor("#F19953")
+            drawing.up()
+            drawing.goto(s.x, s.y)
+            drawing.down()
+            for i in range(4):
+                drawing.forward(s.size)
+                drawing.left(90)
+            drawing.hideturtle()
+        drawing.end_fill()
