@@ -4,6 +4,7 @@ This is rhe base module
 """
 import json
 import os
+import csv
 
 
 class Base():
@@ -76,5 +77,7 @@ class Base():
         if os.path.exists(filename):
             with open(filename, 'r', encoding='utf-8') as f:
                 json_str = f.read()
-        list_dict = cls.from_json_string(json_str)
-        return [cls.create(**obj) for obj in list_dict]
+            list_dict = cls.from_json_string(json_str)
+            return [cls.create(**obj) for obj in list_dict]
+        else:
+            return []
