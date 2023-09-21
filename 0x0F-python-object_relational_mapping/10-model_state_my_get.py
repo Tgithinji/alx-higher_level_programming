@@ -16,7 +16,7 @@ if __name__ == "__main__":
     found = False
 
     for instance in session.query(State).\
-    filter(State.name == argv[4]).order_by(State.id):
+            filter(State.name == argv[4]).order_by(State.id):
         if instance.name == argv[4]:
             print(f"{instance.id}")
             found = True
