@@ -8,5 +8,5 @@ import sys
 
 if __name__ == "__main__":
     response = requests.get(sys.argv[1])
-    x_request = response.headers['X-Request-Id']
-    print(x_request)
+    if 'X-Request-Id' in response.headers:
+        print(response.headers['X-Request-Id'])
